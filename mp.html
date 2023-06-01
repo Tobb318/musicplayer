@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mp.css" />
+    <link rel="icon" type="image/x-icon" href="./music.png" />
+    <script src="mp.js" defer></script>
+    <title>Musicplayer</title>
+  </head>
+  <body>
+    <div class="player">
+      <div class="wrapper">
+        <div class="details">
+          <div class="now-playing">PLAYING x OF y</div>
+          <div class="track-art"></div>
+          <div class="track-name">Track Name</div>
+          <div class="track-artist">Track Artist</div>
+        </div>
+        <div class="slider_container">
+          <div class="current-time">00:00</div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="0"
+            class="seek_slider"
+            onchange="seekTo()"
+          />
+          <div class="total-duration">00:00</div>
+        </div>
+
+        <div class="slider_container">
+          <i style="padding: 10px"
+            ><ion-icon name="volume-low-outline"></ion-icon
+          ></i>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="99"
+            class="volume_slider"
+            onchange="setVolume()"
+          />
+          <i style="padding: 10px"
+            ><ion-icon name="volume-high-outline"></ion-icon
+          ></i>
+        </div>
+        <div class="buttons">
+          <div class="random-track" onclick="randomTrack()">
+            <i title="random"
+              ><ion-icon
+                style="font-size: 30px; cursor: pointer"
+                name="shuffle-outline"
+              ></ion-icon
+            ></i>
+          </div>
+          <div class="prev-track" onclick="prevTrack()">
+            <i
+              ><ion-icon
+                style="font-size: 30px; cursor: pointer"
+                name="play-skip-back-circle-outline"
+              ></ion-icon
+            ></i>
+          </div>
+          <div class="playpause-track" onclick="playpauseTrack()">
+            <i
+              ><ion-icon
+                style="font-size: 50px; cursor: pointer"
+                name="play-circle-outline"
+              ></ion-icon
+            ></i>
+          </div>
+          <div class="next-track" onclick="nextTrack()">
+            <i
+              ><ion-icon
+                style="font-size: 30px; cursor: pointer"
+                name="play-skip-forward-circle-outline"
+              ></ion-icon
+            ></i>
+          </div>
+          <div class="repeat-track" onclick="repeatTrack()">
+            <i title="repeat"
+              ><ion-icon
+                style="font-size: 30px; cursor: pointer"
+                name="refresh-circle-outline"
+              ></ion-icon
+            ></i>
+          </div>
+        </div>
+        <div id="wave">
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="mp.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
